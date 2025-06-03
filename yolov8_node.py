@@ -212,9 +212,9 @@ class Yolov8Node(Node):
                         depth_meters = median_depth * 0.001
                         yaxis1 = (center_x - cx) * depth_meters / fx
                         zaxis1 = (center_y - cy) * depth_meters / fy
-                        x = depth_meters + 0.050 # Adjusted for gripper position
+                        x = depth_meters + 0.099 #adjust to arm base, added 0.038 from 0.050
 
-                        ycorr = -yaxis1 + 0.020 #0.020 offset adjust to center of object
+                        ycorr = -yaxis1 + 0.030 #0.020 offset adjust to center of object
                         zcorr= -zaxis1 + 0.050 #0.050 offset
                         center_xyz = [x, ycorr, zcorr]
 
@@ -222,8 +222,7 @@ class Yolov8Node(Node):
                         x1_m = (x1 - cx) * depth_meters / fx
                         x2_m = (x2 - cx) * depth_meters / fx
                         width_m = abs(x2_m - x1_m)
-
-                        width_m = width_m / 2 - 0.008 #adjust to gripper width
+                        width_m = width_m / 2 - 0.009 #adjust to gripper width
 
                     item_dict[f'item_{n}'] = {
                         'class': detection.names[detection_class[n]],
