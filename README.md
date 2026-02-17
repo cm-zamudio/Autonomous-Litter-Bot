@@ -1,6 +1,6 @@
 # Unitree A1 Autonomous-Litter-Bot
 
-Sensior design project Fall 2024 - Spring 2025, University of Illinois Chicago
+Senior design project Fall 2024 - Spring 2025, University of Illinois Chicago
 
 This project demonstrates a one-shot autonomous pick-and-place pipeline using an OpenManipulator-X mounted on a Unitree A1. An Intel RealSense camera performs object detection (COCO dataset, bottle class only). Once a bottle is detected, its 3D position is computed and the robot arm moves to the object, grasps it, and places it at a predefined drop-off location.
 
